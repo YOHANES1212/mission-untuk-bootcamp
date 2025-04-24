@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("img/01h6dcvzq17vhzzbk43j9se2xf.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.daftar-container {
+  background-color: rgba(24, 26, 28, 0.8);
+  width: 529px;
+  padding: 40px;
+  border-radius: 16px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.logo-img {
+  display: block;
+  margin: 0 auto 16px auto;
+  max-width: 120px;
+  height: auto;
+}
+
+.daftar-container h1 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.daftar-container p {
+  text-align: center;
+  margin-bottom: 32px;
+  color: #ccc;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.action-links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.action-links a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.or {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.btn-google img {
+  width: 20px;
+  height: 20px;
+}
+
+.action-links a:hover {
+  color: rgba(5, 134, 255, 1);
+}
+
+.btn-google:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.btn-google:hover {
+  color: black;
+}
+
+.btn-login:hover {
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    width: 90%;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .form-group input,
+  .btn-login,
+  .btn-google {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .action-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .btn-google {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
