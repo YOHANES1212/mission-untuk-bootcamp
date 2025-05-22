@@ -1,150 +1,109 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>To-Do List App</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 400px;
-      margin: auto;
-      padding: 20px;
-    }
-    input, button {
-      padding: 10px;
-      margin: 5px 0;
-      width: 100%;
-    }
-    .todo-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 5px 0;
-    }
-    .done {
-      text-decoration: line-through;
-      color: gray;
-    }
-    .section-title {
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <h2>To-Do List</h2>
-  
-  <input type="text" id="taskInput" placeholder="Tulis tugas...">
-  <input type="date" id="taskDate">
-  <button onclick="addTask()">Tambah Tugas</button>
-  <button onclick="clearAll()">Hapus Semua</button>
-
-  <h3 class="section-title">Tugas Hari Ini</h3>
-  <div id="taskList"></div>
-
-  <h3 class="section-title">Tugas Selesai (DONE)</h3>
-  <div id="doneList"></div>
-
-  <script>
-    let tasks = [];
-
-    function addTask() {
-      const taskText = document.getElementById("taskInput").value;
-      const taskDate = document.getElementById("taskDate").value;
-
-      if (taskText && taskDate) {
-        tasks.push({ text: taskText, date: taskDate, done: false });
-        document.getElementById("taskInput").value = "";
-        document.getElementById("taskDate").value = "";
-        renderTasks();
-      }
-    }
-
-    function toggleTask(index) {
-      tasks[index].done = !tasks[index].done;
-      renderTasks();
-    }
-
-    function clearAll() {
-      if (confirm("Yakin ingin menghapus semua tugas?")) {
-        tasks = [];
-        renderTasks();
-      }
-    }
-
-    function renderTasks() {
-      const today = new Date().toISOString().split("T")[0];
-      const taskList = document.getElementById("taskList");
-      const doneList = document.getElementById("doneList");
-      taskList.innerHTML = "";
-      doneList.innerHTML = "";
-
-      tasks.forEach((task, index) => {
-        const div = document.createElement("div");
-        div.className = "todo-item";
-        if (task.done) div.classList.add("done");
-
-        const label = document.createElement("label");
-        label.innerText = task.text;
-
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.checked = task.done;
-        checkbox.onchange = () => toggleTask(index);
-
-        div.appendChild(label);
-        div.appendChild(checkbox);
-
-        if (task.done) {
-          doneList.appendChild(div);
-        } else if (task.date === today) {
-          taskList.appendChild(div);
-        }
-      });
-    }
-
-    renderTasks();
-  </script>
-
-</body>
-=======
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BIKIN MOVIE</title>
-    <link rel="stylesheet" href="login.css" />
+    <title>To-Do List App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+      }
+      input,
+      button {
+        padding: 10px;
+        margin: 5px 0;
+        width: 100%;
+      }
+      .todo-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+      }
+      .done {
+        text-decoration: line-through;
+        color: gray;
+      }
+      .section-title {
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
-    <!-- register start -->
-    <div class="login-container">
-      <h2>Masuk</h2>
-      <p>Selamat datang kembali</p>
+    <h2>To-Do List</h2>
 
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Masukan username" />
-      </div>
+    <input type="text" id="taskInput" placeholder="Tulis tugas..." />
+    <input type="date" id="taskDate" />
+    <button onclick="addTask()">Tambah Tugas</button>
+    <button onclick="clearAll()">Hapus Semua</button>
 
-      <div class="form-group">
-        <label for="password">Kata sandi</label>
-        <input type="text" id="password" placeholder="Masukan kata sandi" />
-      </div>
+    <h3 class="section-title">Tugas Hari Ini</h3>
+    <div id="taskList"></div>
 
-      <div class="action-links">
-        <span>Belum punya akun? <a href="daftar.html">Daftar</a></span>
-        <a href="#">Lupa kata sandi?</a>
-      </div>
+    <h3 class="section-title">Tugas Selesai (DONE)</h3>
+    <div id="doneList"></div>
 
-      <button class="btn-login"><a href="beranda.html">masuk</a></button>
+    <script>
+      let tasks = [];
 
-      <button class="btn-google">
-        <img src="img/download (7).png" alt="Google" />
-        Masuk dengan Google
-      </button>
-    </div>
-    <!-- register end -->
+      function addTask() {
+        const taskText = document.getElementById("taskInput").value;
+        const taskDate = document.getElementById("taskDate").value;
+
+        if (taskText && taskDate) {
+          tasks.push({ text: taskText, date: taskDate, done: false });
+          document.getElementById("taskInput").value = "";
+          document.getElementById("taskDate").value = "";
+          renderTasks();
+        }
+      }
+
+      function toggleTask(index) {
+        tasks[index].done = !tasks[index].done;
+        renderTasks();
+      }
+
+      function clearAll() {
+        if (confirm("Yakin ingin menghapus semua tugas?")) {
+          tasks = [];
+          renderTasks();
+        }
+      }
+
+      function renderTasks() {
+        const today = new Date().toISOString().split("T")[0];
+        const taskList = document.getElementById("taskList");
+        const doneList = document.getElementById("doneList");
+        taskList.innerHTML = "";
+        doneList.innerHTML = "";
+
+        tasks.forEach((task, index) => {
+          const div = document.createElement("div");
+          div.className = "todo-item";
+          if (task.done) div.classList.add("done");
+
+          const label = document.createElement("label");
+          label.innerText = task.text;
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = task.done;
+          checkbox.onchange = () => toggleTask(index);
+
+          div.appendChild(label);
+          div.appendChild(checkbox);
+
+          if (task.done) {
+            doneList.appendChild(div);
+          } else if (task.date === today) {
+            taskList.appendChild(div);
+          }
+        });
+      }
+
+      renderTasks();
+    </script>
   </body>
->>>>>>> 2994b4eced5f881f48e52b08d0db81dca852dc1c
 </html>
